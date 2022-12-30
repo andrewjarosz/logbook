@@ -16,6 +16,14 @@ class _HomePageState extends State<HomePage> {
   void writeData() {
     _myBox.put(1, 'Andy');
   }
+  void readData() {
+    print(_myBox.get(1));
+  }
+
+  void deleteData(){
+    _myBox.delete(1);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,19 +31,19 @@ class _HomePageState extends State<HomePage> {
         child: Row(
           children: [
             MaterialButton(
-              onPressed: () {},
+              onPressed: writeData,
               child: Text('Write'),
               color: Colors.green[200],
             ),
 
             MaterialButton(
-              onPressed: () {},
+              onPressed: readData,
               child: Text('Read'),
               color: Colors.blue[200],
             ),
 
             MaterialButton(
-              onPressed: () {},
+              onPressed: deleteData,
               child: Text('Delete'),
               color: Colors.red[200],
             ),
